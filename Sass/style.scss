@@ -1,0 +1,59 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+h1{
+    color:#d04f4f;
+}
+
+.search{
+    &-main{
+        background-color: #e7e7e7;
+    }
+    &-ctn{
+        display: block;
+    }
+    &-ingredient{
+        background-color: #3282f7;        
+        &::placeholder{
+            color:white;
+        }
+        &:focus{
+            background-color: #3282f7;
+            color: white;  
+        }
+    }
+    &-device{
+        background-color: #68d9a4;
+        &::placeholder{
+            color:white;
+        }
+        &:focus{
+            background-color: #68d9a4;
+            color: white;  
+        }
+    }
+    &-utensils{
+        background-color: #ed6454;
+        &::placeholder{
+            color:white;
+        }
+        &:focus{
+            background-color: #ed6454;
+            color: white;  
+        }
+    }
+    
+    
+}
+
+.loupe{
+    margin: 0 0 0 -2.5em;
+}
+
+.arrow{
+    margin: 0 0 0 -2.5em;
+}
+
+.liste{
+    background-color: #3282f7;
+}

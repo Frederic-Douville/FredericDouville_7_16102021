@@ -1,0 +1,22 @@
+{
+  "name": "les_petits_plats",
+  "version": "1.0.0",
+  "description": "Projet 7 OCR",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./Sass/style.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frederic-Douville/FredericDouville_7_16102021.git"
+  },
+  "author": "Frederic Douville",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frederic-Douville/FredericDouville_7_16102021/issues"
+  },
+  "homepage": "https://github.com/Frederic-Douville/FredericDouville_7_16102021#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
