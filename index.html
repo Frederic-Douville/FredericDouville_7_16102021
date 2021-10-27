@@ -21,98 +21,135 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col d-flex flex-row align-items-center">				
-				<input class="form-control py-3 search-main" id="mainsSearch"  type="text" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" />
-				<label for="mainResearch" class="name-label">
-					<svg class="loupe" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<div class="col d-flex flex-row align-items-center">
+				<label for="mainSearch" class="name-label"></label>				
+				<input class="form-control py-3 search-main" id="main-input"  type="text" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"/>
+				<button class="button rounded search-logo" id="main-search-btn">
+					<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M23.4167 20.6667H21.9683L21.455 20.1717C23.2517 18.0817 24.3333 15.3683 24.3333 12.4167C24.3333 5.835 18.9983 0.5 12.4167 0.5C5.835 0.5 0.5 5.835 0.5 12.4167C0.5 18.9983 5.835 24.3333 12.4167 24.3333C15.3683 24.3333 18.0817 23.2517 20.1717 21.455L20.6667 21.9683V23.4167L29.8333 32.565L32.565 29.8333L23.4167 20.6667ZM12.4167 20.6667C7.85167 20.6667 4.16667 16.9817 4.16667 12.4167C4.16667 7.85167 7.85167 4.16667 12.4167 4.16667C16.9817 4.16667 20.6667 7.85167 20.6667 12.4167C20.6667 16.9817 16.9817 20.6667 12.4167 20.6667Z" fill="black"/>
 					</svg>
-				</label>
+				</button>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
 		<div class="row">
-			<div class="col d-flex flex-row justify-content-start" id="tagCtn">				
+			<div class="col d-flex flex-row justify-content-start flex-wrap" id="all-tag-ctn">	
+				<!--   
+				<div class="rounded d-flex flex-row align-items-center justify-content-center me-2 my-2 tag" id="tag-farine" >
+					<span class="ps-3 pe-2 py-2">Farine</span>
+					<button class="button rounded ps-2 pe-3 pb-1 close-cross" id="farine">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.59 6L10 8.59L7.41 6L6 7.41L8.59 10L6 12.59L7.41 14L10 11.41L12.59 14L14 12.59L11.41 10L14 7.41L12.59 6ZM10 0C4.47 0 0 4.47 0 10C0 15.53 4.47 20 10 20C15.53 20 20 15.53 20 10C20 4.47 15.53 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="white"/>
+						</svg>							
+					</button>
+				</div>	
+				-->
 			</div>
 		</div>
 	</div>
 
 	<div class="container my-3">
-		<div class=" d-flex flex-row justify-content-start flex-wrap">
-			<div class="col d-flex flex-row align-items-start ">
-				<div class="d-flex flex-column align-items-start me-2">
-					<div class="d-flex flex-row align-items-center">
-						<input class="form-control py-3 search-ingredient" type="text" placeholder="Ingredients" />				
-						<button class="arrow btn">
-							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M14.12 0.453369L8 6.56004L1.88 0.453369L0 2.33337L8 10.3334L16 2.33337L14.12 0.453369Z" fill="white"/>
-							</svg>
-						</button>					
-					</div>
-					<div class="d-flex flex-row flex-wrap liste">
-						<ul>
-							<li>coco</li>
-							<li>farine</li>
-							<li>soja</li>
-						</ul>
-						<ul>
-							<li>lait</li>
-							<li>oeuf</li>
-							<li>huile</li>
-						</ul>
-						<ul>
-							<li>coco</li>
-							<li>farine</li>
-							<li>soja</li>
-						</ul>
-						<ul>
-							<li>lait</li>
-							<li>oeuf</li>
-							<li>huile</li>
-						</ul>
-					</div>
-				</div>
-									
-					
-								
-			
-				<div class="d-flex flex-column align-items-start me-2">
-					<div class="d-flex flex-row align-items-center">
-						<input class="form-control py-3 search-device" type="text" placeholder="Appareil" />				
-						<button class="arrow btn">
+		<div class=" d-flex flex-row justify-content-start ">
+			<div class="col d-flex flex-row align-items-start flex-wrap">
+
+				<div class="d-flex flex-column align-items-center rounded my-2  me-3  search-ingredient" id="ingredient-ctn">
+					<div class="d-flex flex-row align-items-center justify-content-between search-ctn">
+						<label for="ingredient" class="search-label my-3" id="ingredient-label">Ingredients</label> 
+						<input class="form-control py-3 search-ingredient-input" id="ingredient-input" type="text" placeholder="Rechercher un ingredient" />				
+						<button class="button rounded arrow-down" id="ingredient-arrow-down">
 							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M14.12 0.453369L8 6.56004L1.88 0.453369L0 2.33337L8 10.3334L16 2.33337L14.12 0.453369Z" fill="white"/>
 							</svg>
 						</button>
-					</div>
-					<div class="d-flex flex-row flex-wrap"></div>
-				</div>	
+						<button class="button rounded arrow-up" id="ingredient-arrow-up">
+							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.88 10.5466L8 4.43996L14.12 10.5466L16 8.66663L8 0.66663L1.64355e-07 8.66663L1.88 10.5466Z" fill="white"/>
+							</svg>
+						</button>
+					</div>					
+					<ul class="list-unstyled px-3 items-list" id="ingredient-list"></ul>										
+				</div>								
 			
-				<div class="d-flex flex-column align-items-start me-2">
-					<div class="d-flex flex-row align-items-center">
-						<input class="form-control py-3 search-utensils" type="text" placeholder="Ustensiles" />			
-						<button class="arrow btn">
+				<div class="d-flex flex-column align-items-center rounded my-2  me-3 search-device" id="device-ctn">
+					<div class="d-flex flex-row align-items-center justify-content-between search-ctn">
+						<label for="device" class="search-label my-3" id="device-label">Appareil</label>
+						<input class="form-control py-3 search-device-input" id="device-input" type="text" placeholder="Rechercher un appareil" />				
+						<button class="button rounded arrow-down" id="device-arrow-down">
 							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M14.12 0.453369L8 6.56004L1.88 0.453369L0 2.33337L8 10.3334L16 2.33337L14.12 0.453369Z" fill="white"/>
 							</svg>
 						</button>
+						<button class="button rounded arrow-up" id="device-arrow-up">
+							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.88 10.5466L8 4.43996L14.12 10.5466L16 8.66663L8 0.66663L1.64355e-07 8.66663L1.88 10.5466Z" fill="white"/>
+							</svg>
+						</button>
 					</div>
-					<div class="d-flex flex-row flex-wrap"></div>
+					<ul class="list-unstyled px-3 items-list" id="device-list"></ul>
 				</div>	
-			</div>
 			
+				<div class="d-flex flex-column align-items-center rounded my-2  me-3 search-utensils" id="utensils-ctn">
+					<div class="d-flex flex-row align-items-center justify-content-between search-ctn">
+						<label for="utensils" class="search-label my-3" id="utensils-label">Ustensiles</label>
+						<input class="form-control py-3 search-utensils-input" id="utensils-input" type="text" placeholder="Rechercher un ustensile" />			
+						<button class="button rounded arrow-down" id="utensils-arrow-down">
+							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.12 0.453369L8 6.56004L1.88 0.453369L0 2.33337L8 10.3334L16 2.33337L14.12 0.453369Z" fill="white"/>
+							</svg>
+						</button>
+						<button class="button rounded arrow-up" id="utensils-arrow-up">
+							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.88 10.5466L8 4.43996L14.12 10.5466L16 8.66663L8 0.66663L1.64355e-07 8.66663L1.88 10.5466Z" fill="white"/>
+							</svg>
+						</button>
+					</div>
+					<ul class="list-unstyled px-3 items-list" id="utensils-list"></ul>
+				</div>	
+				
+			</div>			
 		</div>
 	</div>
+	<div class="container main-ctn ">
+		<div class="row d-flex flex-row justify-content-between flex-wrap" id="all-card-ctn">
+			<!--
+			<div class="col col-md-6 col-lg-4 recipe-ctn">
+				<div class="card rounded mb-4">
+					<div class="card-picture rounded-top"></div>
+					<div class="card-body">
+						<div class="card-group row mb-2">
+							<h2 class="card-title col-8 my-auto">Titre recette</h2>
+							<div class="card-time col-4 ps-0 d-flex flex-row align-items-center justify-content-end">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18ZM10.5 5H9V11L14.2 14.2L15 12.9L10.5 10.2V5Z" fill="black"/>
+								</svg>
+								<span class="card-duration ms-1"><b>10 min</b></span>
+							</div>
+						</div>
+						<div class="card-group row">
+							<div class="card-ingredient col-6">
+								<ul class="ingredient-list list-unstyled">
+									<li><b>Lait de coco:</b> 400ml</li>
+									<li><b>Jus de citron:</b> 2</li>
+									<li><b>Crème de coco:</b> 4 cuillères</li>
+									<li><b>Sucre:</b> 20g</li>
+									<li><b>Glaçons:</b> 2</li>
+								</ul>
+							</div>
+							<div class="card-text col-6">
+								Blablablablablablablablablablablablablablablablablablablablablablablablabla
+							</div>
+						</div>
+					</div>				
+				</div>
+			</div>
+		    -->
+	</div>
+
 	
 
-	<div class="container">
-		<div class="row d-flex flex-row justify-content-between flex-wrap">
-			<div class="col-4"></div>
-			
-		</div>
-	</div>
-
+	<script src="index.js" type="module"></script>
+	
 </body>
 </html>
