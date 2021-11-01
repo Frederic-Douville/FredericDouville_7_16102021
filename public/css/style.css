@@ -11180,6 +11180,7 @@ h1, .h1 {
   }*/
 }
 .search-ingredient-input {
+  color: white;
   background-color: #3282f7;
   border-style: none;
   margin: 0.2em;
@@ -11199,6 +11200,7 @@ h1, .h1 {
   min-width: 15rem;
 }
 .search-device-input {
+  color: white;
   background-color: #68d9a4;
   border-style: none;
   margin: 0.2em;
@@ -11218,6 +11220,7 @@ h1, .h1 {
   min-width: 15rem;
 }
 .search-utensils-input {
+  color: white;
   background-color: #ed6454;
   border-style: none;
   margin: 0.2em;
@@ -11275,6 +11278,12 @@ h1, .h1 {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   border-style: nones;
+}
+
+.msg-list-empty {
+  color: white;
+  font-weight: 600;
+  display: none;
 }
 
 .card {

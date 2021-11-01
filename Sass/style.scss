@@ -53,6 +53,7 @@ h1{
             width:100%;
         }*/
         &-input{
+            color: white;
             background-color: #3282f7;
             border-style: none;
             margin:0.2em;            
@@ -72,6 +73,7 @@ h1{
         width:20%;
         min-width:15rem;
         &-input{
+            color: white;
             background-color: #68d9a4;
             border-style: none;
             margin:0.2em;
@@ -91,6 +93,7 @@ h1{
         width:20%;
         min-width:15rem;
         &-input{
+            color: white;
             background-color: #ed6454;
             border-style: none;
             margin:0.2em;
@@ -154,6 +157,12 @@ h1{
         border-radius: 20px;
         border-style: nones;
     }    
+}
+
+.msg-list-empty{
+    color:white;
+    font-weight: 600;
+    display: none;
 }
 
 
