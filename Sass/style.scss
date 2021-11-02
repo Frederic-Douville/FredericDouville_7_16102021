@@ -44,14 +44,10 @@ h1{
         width:100%;
     }    
     &-ingredient{
-        overflow: auto;
+        position: relative;
         background-color: #3282f7;
         width:20%;        
-        min-width:15rem;
-        /*
-        @media screen and (max-width: 768px){
-            width:100%;
-        }*/
+        min-width:15rem;        
         &-input{
             color: white;
             background-color: #3282f7;
@@ -69,6 +65,7 @@ h1{
         }       
     }
     &-device{
+        position: relative;
         background-color: #68d9a4;
         width:20%;
         min-width:15rem;
@@ -89,6 +86,7 @@ h1{
         }        
     }
     &-utensils{
+        position: relative;
         background-color: #ed6454;
         width:20%;
         min-width:15rem;
@@ -143,9 +141,13 @@ h1{
 .items-list{
     grid-template-columns:repeat(3,1fr);
     width:100%;    
-    max-height:15em;
+    max-height:14.5em;
     overflow-y:auto;
     display: none;
+    position:absolute;
+    left:0;
+    top:60px;
+    z-index:10;
     &::-webkit-scrollbar{
         width:12px;
     }
@@ -156,7 +158,16 @@ h1{
         background-color:hsla(0,0%,0%,0.2);
         border-radius: 20px;
         border-style: nones;
-    }    
+    }
+    &-ingredient{        
+        background-color: #3282f7;
+    }
+    &-device{
+        background-color: #68d9a4;
+    }          
+    &-utensils{
+        background-color: #ed6454;
+    }
 }
 
 .msg-list-empty{

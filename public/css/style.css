@@ -11170,14 +11170,10 @@ h1, .h1 {
   width: 100%;
 }
 .search-ingredient {
-  overflow: auto;
+  position: relative;
   background-color: #3282f7;
   width: 20%;
   min-width: 15rem;
-  /*
-  @media screen and (max-width: 768px){
-      width:100%;
-  }*/
 }
 .search-ingredient-input {
   color: white;
@@ -11195,6 +11191,7 @@ h1, .h1 {
   color: white;
 }
 .search-device {
+  position: relative;
   background-color: #68d9a4;
   width: 20%;
   min-width: 15rem;
@@ -11215,6 +11212,7 @@ h1, .h1 {
   color: white;
 }
 .search-utensils {
+  position: relative;
   background-color: #ed6454;
   width: 20%;
   min-width: 15rem;
@@ -11264,9 +11262,13 @@ h1, .h1 {
 .items-list {
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  max-height: 15em;
+  max-height: 14.5em;
   overflow-y: auto;
   display: none;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  z-index: 10;
 }
 .items-list::-webkit-scrollbar {
   width: 12px;
@@ -11278,6 +11280,15 @@ h1, .h1 {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   border-style: nones;
+}
+.items-list-ingredient {
+  background-color: #3282f7;
+}
+.items-list-device {
+  background-color: #68d9a4;
+}
+.items-list-utensils {
+  background-color: #ed6454;
 }
 
 .msg-list-empty {
