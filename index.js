@@ -272,6 +272,8 @@ function closeTag(event){
     
     idCardArrayInitial = [];
     idCardArrayFinal = [];    
+    idCardArrayFinal2 = [];
+    idCardArrayFinal3 = [];    
     tagFilter(recipes,choiceTagArray);      
 }
 
@@ -447,9 +449,7 @@ function utSearch(){
 /*Fonction de filtre par ingrédient lors de la saisie de l'input principale*/
 function ingFilter(array,content){
     var array1 = [];
-    var array2 = [];
-    for(var i=0;i<array.length;i++){
-        array2.push(array[i].id);
+    for(var i=0;i<array.length;i++){        
         for(var j=0;j<array[i].ingredients.length;j++){
             var ingVar = array[i].ingredients[j].ingredient;           
             if(ingVar.toLowerCase().startsWith(content) || ingVar.includes(content)){                
@@ -457,41 +457,29 @@ function ingFilter(array,content){
                 break;
             }
         }
-    }
-    var n=0;
-    for(var k in array1){
-        n+=1;
-        array2.splice(array1[k]-n,1);
-    }
-    listTagFilter(recipes,array1);
+    }    
+    listTagFilter(recipes,array1,choiceTagArray);
 }
 
 /*Fonction de filtre par titre et description lors de la saisie de l'input principale*/
 function titleAndDescFilter(array,content){
     var array1 = [];
-    var array2 = [];
-    for(var i=0;i<array.length;i++){
-        array2.push(array[i].id);
+    for(var i=0;i<array.length;i++){       
         if(array[i].name.toLowerCase().startsWith(content) || array[i].name.includes(content)){                       
             array1.push(array[i].id);
         }        
         if(array[i].description.toLowerCase().startsWith(content) || array[i].description.includes(content)){                               
-            array1.push(array[i].id);
-            
+            array1.push(array[i].id);            
         }
-    }    
-    var n=0;
-    for(var k in array1){
-        n+=1;
-        array2.splice(array1[k]-n,1);        
     }
-    listTagFilter(recipes,array1);
+    listTagFilter(recipes,array1,choiceTagArray);
 };
 
 /*Fonction de filtre lorsque des tags sont activés*/
 var idCardArrayInitial = [];
 var idCardArrayFinal = [];
 var idCardArrayFinal2 = [];
+var idCardArrayFinal3 = [];
 function tagFilter(mainArray,tagArray){       
     for(var j=0;j<tagArray.length;j++){        
         for(var i=0;i<mainArray.length;i++){
@@ -511,10 +499,7 @@ function tagFilter(mainArray,tagArray){
         } 
     }    
 
-    idCardArrayInitial.sort((a,b)=>a-b);
-    idCardArrayFinal = [];
-    idCardArrayFinal2 = [];
-    
+    idCardArrayInitial.sort((a,b)=>a-b);    
     if(tagArray.length == 1){
         listTagFilter(recipes,idCardArrayInitial,choiceTagArray);
     }else if(tagArray.length > 1){
@@ -524,11 +509,17 @@ function tagFilter(mainArray,tagArray){
             }
             if(idCardArrayInitial[m] === idCardArrayInitial[m+1] && idCardArrayInitial[m] === idCardArrayInitial[m-1]){                
                 idCardArrayFinal2.push(idCardArrayInitial[m]);                 
+            }
+            if(idCardArrayInitial[m] === idCardArrayInitial[m+1] && idCardArrayInitial[m] === idCardArrayInitial[m+2] && idCardArrayInitial[m] === idCardArrayInitial[m-1]){                
+                idCardArrayFinal3.push(idCardArrayInitial[m]);                 
             }              
         }
         listTagFilter(recipes,idCardArrayFinal,choiceTagArray);
         if(idCardArrayFinal2.length > 0){
             listTagFilter(recipes,idCardArrayFinal2,choiceTagArray);
+        }
+        if(idCardArrayFinal3.length > 0){
+            listTagFilter(recipes,idCardArrayFinal3,choiceTagArray);
         }        
     }else if(tagArray.length == 0){
         Array.prototype.forEach.call(recipeCtn,el => el.style.display = 'block');
@@ -561,17 +552,17 @@ function listTagFilter(mainArray,tagArray,tagChoice){
     
     for(var o in tagChoice){
         for(var p in ingArray){
-            if(ingArray[p].toLowerCase().startsWith(tagChoice[o]) && ingArray[p].includes(tagChoice[o])){
+            if(ingArray[p] === tagChoice[o]){
                 document.getElementById('ing-' + tagChoice[o]).style.display='none';             
             }
         }
         for(var q in devArray){
-            if(devArray[q].toLowerCase().startsWith(tagChoice[o]) && devArray[q].includes(tagChoice[o])){
+            if(devArray[q] === tagChoice[o]){
                 document.getElementById('dev-' + tagChoice[o]).style.display='none';             
             }
         }
         for(var r in utArray){
-            if(utArray[r].toLowerCase().startsWith(tagChoice[o]) && utArray[r].includes(tagChoice[o])){
+            if(utArray[r] === tagChoice[o]){
                 document.getElementById('ut-' + tagChoice[o]).style.display='none';             
             }
         }
