@@ -384,11 +384,12 @@ function mainSearch(){
              }
         }                      
     }
+    console.log(noMatch1,noMatch2);
     if(contentSearch == '' && choiceTagArray.length == 0){       
         Array.prototype.forEach.call(recipeCtn,el => el.style.display = 'block');
         Array.prototype.forEach.call(item,el => el.style.display = 'block');
         msgNoRecipes.style.display = 'none'; 
-    }else if(noMatch1 == 117 && noMatch2 == 50){
+    }else if(noMatch1 == 116 && noMatch2 == 50){
         msgNoRecipes.style.display = 'flex';
         Array.prototype.forEach.call(recipeCtn,el => el.style.display = 'none');        
     }

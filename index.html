@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col d-flex flex-row align-items-center">
-				<label for="mainSearch" class="name-label"></label>				
+				<label for="main-input" class="name-label"></label>				
 				<input class="form-control py-3 search-main" id="main-input"  type="text" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"/>
 				<button class="button rounded search-logo" id="main-search-btn" type="submit">
 					<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@
 
 				<div class="d-flex flex-column align-items-center rounded my-2  me-3  search-ingredient" id="ingredient-ctn">
 					<div class="d-flex flex-row align-items-center justify-content-between search-ctn">
-						<label for="ingredient" class="search-label my-3" id="ingredient-label">Ingredients</label> 
+						<label for="ingredient-input" class="search-label my-3" id="ingredient-label">Ingredients</label> 
 						<input class="form-control py-3 search-ingredient-input" id="ingredient-input" type="text" placeholder="Rechercher un ingredient" />				
 						<button class="button rounded arrow-down" id="ingredient-arrow-down">
 							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,14 +61,14 @@
 						</button>
 					</div>					
 					<ul class="list-unstyled px-3 rounded-bottom items-list items-list-ingredient" id="ingredient-list">
-						<span class="msg-list-empty p-2">Aucun résultat</span>
+						<li class="msg-list-empty p-2">Aucun résultat</li>
 					</ul>
 															
 				</div>								
 			
 				<div class="d-flex flex-column align-items-center rounded my-2  me-3 search-device" id="device-ctn">
 					<div class="d-flex flex-row align-items-center justify-content-between search-ctn">
-						<label for="device" class="search-label my-3" id="device-label">Appareil</label>
+						<label for="device-input" class="search-label my-3" id="device-label">Appareil</label>
 						<input class="form-control py-3 search-device-input" id="device-input" type="text" placeholder="Rechercher un appareil" />				
 						<button class="button rounded arrow-down" id="device-arrow-down">
 							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,14 +82,14 @@
 						</button>
 					</div>
 					<ul class="list-unstyled px-3 rounded-bottom items-list items-list-device" id="device-list">
-						<span class="msg-list-empty p-2">Aucun résultat</span>
+						<li class="msg-list-empty p-2">Aucun résultat</li>
 					</ul>
 					
 				</div>	
 			
 				<div class="d-flex flex-column align-items-center rounded my-2  me-3 search-utensils" id="utensils-ctn">
 					<div class="d-flex flex-row align-items-center justify-content-between search-ctn">
-						<label for="utensils" class="search-label my-3" id="utensils-label">Ustensiles</label>
+						<label for="utensils-input" class="search-label my-3" id="utensils-label">Ustensiles</label>
 						<input class="form-control py-3 search-utensils-input" id="utensils-input" type="text" placeholder="Rechercher un ustensile" />			
 						<button class="button rounded arrow-down" id="utensils-arrow-down">
 							<svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@
 						</button>
 					</div>
 					<ul class="list-unstyled px-3 rounded-bottom items-list items-list-utensils" id="utensils-list">
-						<span class="msg-list-empty p-2">Aucun résultat</span>
+						<li class="msg-list-empty p-2">Aucun résultat</li>
 					</ul>
 					
 				</div>	
@@ -112,7 +112,7 @@
 		</div>
 	</div>
 	<div class="container main-ctn ">
-		<div class="row d-flex flex-row justify-content-between flex-wrap" id="all-card-ctn">
+		<div class="row d-flex flex-row justify-content-between flex-wrap" id="all-card-ctn"></div>
 		<div class="row flex-row justify-content-center norecipe-msg" id="msg-no-recipes">
 			Aucune recette ne correspond à votre critère... Vous pouvez chercher "tarte aux pommes", "poisson", etc.
 		</div>	
