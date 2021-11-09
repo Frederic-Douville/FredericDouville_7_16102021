@@ -365,32 +365,39 @@ utInput.addEventListener("keyup",utSearch);
 /*Fonctions de recherche principale*/
 
 function mainSearch(){    
-    var contentSearch = mainInput.value; 
+    var contentSearch = mainInput.value;
+    var newRecipes = []; 
     var noMatch1 = 0;
     var noMatch2 = 0;     
     if(contentSearch.length >= 3){
-        ingArray.forEach(function(el){
-            if(el.toLowerCase().startsWith(contentSearch) || el.includes(contentSearch)){
-                ingFilter(recipes,contentSearch);          
-            }else{
-                noMatch1 += 1;
-            }
-        })       
+        recipes.forEach(function(el){
+            el.ingredients.forEach(function(el2){
+                if(el2.ingredient.toLowerCase().startsWith(contentSearch) || el2.ingredient.includes(contentSearch)){
+                    newRecipes.push(el);
+                    ingFilter(newRecipes,contentSearch);          
+                }else{
+                    noMatch1 += 1;
+                }
+            })            
+        })           
         recipes.forEach(function(el){
             if(el.name.toLowerCase().startsWith(contentSearch)
              || el.name.includes(contentSearch)
              || el.description.includes(contentSearch)){
-                 titleAndDescFilter(recipes,contentSearch);
+                 newRecipes.push(el);
+                 titleAndDescFilter(newRecipes,contentSearch);
              }else{
                  noMatch2 += 1;
              }
         })                             
     }
+    console.log(newRecipes);   
+    console.log(noMatch1,noMatch2);
     if(contentSearch == '' && choiceTagArray.length == 0){       
         Array.prototype.forEach.call(recipeCtn,el => el.style.display = 'block');
         Array.prototype.forEach.call(item,el => el.style.display = 'block');
         msgNoRecipes.style.display = 'none'; 
-    }else if(noMatch1 == 117 && noMatch2 == 50){
+    }else if(noMatch1 == 254 && noMatch2 == 50){
         msgNoRecipes.style.display = 'flex';
         Array.prototype.forEach.call(recipeCtn,el => el.style.display = 'none');        
     }
