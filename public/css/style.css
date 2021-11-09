@@ -2522,10 +2522,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 
+  box-shadow: 0 0 0 1px #fff; 
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 
+  box-shadow: 0 0 0 1px #fff; 
 }
 .form-range::-moz-focus-outer {
   border: 0;
